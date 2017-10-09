@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{ super() }}小车控制台{% endblock %}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='car-control.css') }}">
+  <script type=text/javascript src="{{ url_for('static', filename='car-control.js') }}"></script>
+{% endblock %}
+{% block body %}
+  <div class="video-container">
+    <img src="{{ url_for('video_feed') }}">
+  </div>
+{% endblock %}

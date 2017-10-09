@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+  {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <script type=text/javascript src="{{ url_for('static', filename='jquery-3.2.1.js') }}"></script>
+    <script type=text/javascript>$SCRIPT_ROOT = {{ request.script_root|tojson|safe  }};</script>
+    <script type=text/javascript src="{{ url_for('static', filename='moment.min.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='Chart.min.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='socket.io.min.js') }}"></script>
+    <title>{% block title %}Graduation Project - {% endblock %}</title>
+    {% endblock %}
+  </head>
+  <body>
+  {% block body %}
+  {% endblock %}
+  </body>
+</html>

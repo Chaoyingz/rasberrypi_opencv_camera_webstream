@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ super() }}主页{% endblock %}
+{% block body %}
+  <div class="nav-container">
+  <div id="nav-name" class="nav-logo" data-hover="IMTCOMAE ES 1514C 3G"><span>Graduation Project</span></div>
+  <div class="nav-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  </div>
+  <div class="info-panel">
+   <div class="cm-percent info-p">
+     <div class="circle">
+      <span class="info-text">硬件监控</span>
+      <span class="info-sort">
+        <p> <span class="blue-i">●</span> 内存使用率 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="pink-i">●</span> CPU使用率</p>
+      </span>
+      <div class="wrapper right">
+	<div id="rightCircle" class="circleProgress right-circle"></div>
+	<div id="rightCircle-i" class="circleProgress right-circle small right-small"></div>
+      </div>
+      <div class="wrapper left">
+	<div id="leftCircle" class="circleProgress left-circle"></div>
+      	<div id="leftCircle-i" class="circleProgress left-circle small left-small"></div>
+      </div>
+     </div>
+   </div>
+   <div class="graph info-p">
+     <span class="info-text info-text-net">网络监控</span>
+     <canvas id="net-graph" style="width:90%;height:75%;"></canvas>
+   </div>
+  </div>
+  <script type=text/javascript src="{{ url_for('static', filename='monitor.js') }}"></script>
+{% endblock %}
